@@ -4,16 +4,15 @@ from django.db import models
 class Usuario(models.Model):
     apellido = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100)
-    dni = models.CharField(max_length=8)
+    cedula = models.CharField(max_length=8)
     nacionalidad = models.CharField(max_length=30)
     fecha_de_nacimiento = models.DateField()
     email = models.EmailField()
-    fecha_de_alta = models.DateField()
-    domicilio = models.CharField(max_length=100)
+    direccion = models.CharField(max_length=100)
     
     def __str__(self):
         return self.apellido
-        #return "Apellido y Nombre: " + self.apellido,self.nombre + " - D.N.I.: " + str(self.dni)
+        #return "Apellido y Nombre: " + self.apellido,self.nombre + " - Cedula: " + str(self.cedula)
         
 class Artista(models.Model):
     apellido = models.CharField(max_length=100)
@@ -32,5 +31,10 @@ class Album(models.Model):
     def __str__(self):
         return self.nombre
         #return "Nombre: " +self.nombre + "Estilo de Musica: " +self.estilo
-    
-    
+
+
+class BusquedaUsuario(models.Model):
+    nombre_busqueda = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre_busqueda

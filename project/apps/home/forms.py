@@ -1,6 +1,7 @@
 from django import forms
 
 from . import models
+from .models import Usuario, BusquedaUsuario
 
 class UsuarioForm(forms.ModelForm):
     class Meta:
@@ -18,3 +19,8 @@ class AlbumForm(forms.ModelForm):
         fields = "__all__"
         
         
+
+class BusquedaUsuarioForm(forms.ModelForm):
+    class Meta:
+        model = models.BusquedaUsuario
+        fields = ('nombre_busqueda',)

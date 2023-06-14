@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block contenido %}
+  <h2>Buscar Usuario</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+  </form>
+  {% csrf_token %}
+  {% if usuarios %}
+  <h3>Resultados de la búsqueda:</h3>
+  <ul>
+    {% for usuario in usuarios %}
+    <li>{{ usuario.username }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock contenido %}
+
+

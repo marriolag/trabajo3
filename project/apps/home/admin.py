@@ -6,4 +6,4 @@ from . import models
 admin.site.register(models.Usuario)
 admin.site.register(models.Artista)
 admin.site.register(models.Album)
-
+admin.site.register(models.BusquedaUsuario)
