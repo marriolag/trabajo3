@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+
+{% block contenido %}
+    <h1 style="color:rgb(246, 154, 154)"> Menú Principal </h1>
+    <br>
+    <a href="{% url 'home:crear_usuario' %}"> Ingresa tu Usuario</a> <br>
+    <a href="{% url 'home:crear_artista' %}"> Ingresa nombre del Artista</a> <br>
+    <a href="{% url 'home:crear_album' %}"> Ingresa nombre del Álbum</a> <br>
+    <br>
+    <br>
+{% endblock contenido %}

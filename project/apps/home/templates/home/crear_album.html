@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+
+
+{% block contenido %}
+    <h1 style="color:pink "> Crear Album</h1>
+
+    <form action= "" method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type = "submit" value="Crear Album">
+    </form>    
+
+    <a href="#" onclick="window.history.back();">Regresar a Menú Principal</a>
+    
+{% endblock contenido %}
